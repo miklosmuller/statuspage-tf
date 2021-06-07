@@ -12,7 +12,7 @@ provider "statuspage" {
 
 resource "statuspage_component" "my_component" {
   page_id     = "wvy1y3msjr06"
-  name        = "Mikloska homokozoja 4"
+  name        = "Mikloska homokozoja 5"
   description = "see TCOE-593 for more info"
   status      = "operational"
 
@@ -26,7 +26,7 @@ resource "statuspage_component" "my_component" {
 resource "statuspage_incident" "my_incident" {
   page_id     = "wvy1y3msjr06"
 
-  name    = "Test incident name"
+  name    = "Test incident name 5"
   impact_override = "none"
   status = "investigating"
   body   = "We are currently investigating the issue."
