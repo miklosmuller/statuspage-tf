@@ -11,7 +11,7 @@ provider "statuspage" {
 }
 
 resource "statuspage_component" "my_component" {
-  page_id     = "wvy1y3msjr06"
+  page_id     = "029l93xg1bxd"
   name        = "Mikloska homokozoja 5"
   description = "see TCOE-593 for more info"
   status      = "operational"
@@ -24,7 +24,7 @@ resource "statuspage_component" "my_component" {
 }
 
 resource "statuspage_incident" "my_incident" {
-  page_id     = "wvy1y3msjr06"
+  page_id     = "029l93xg1bxd"
 
   name    = "Test incident name 5"
   impact_override = "none"
