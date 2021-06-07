@@ -16,11 +16,11 @@ resource "statuspage_component" "my_component" {
   description = "see TCOE-593 for more info"
   status      = "operational"
 
-  lifecycle {
-      ignore_changes = [
-          status
-      ]
-  }
+#  lifecycle {
+#      ignore_changes = [
+#          status
+#      ]
+#  }
 }
 
 resource "statuspage_incident" "my_incident" {
