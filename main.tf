@@ -12,7 +12,7 @@ provider "statuspage" {
 
 resource "statuspage_component" "my_component" {
   page_id     = "wvy1y3msjr06"
-  name        = "Mikloska homokozoja"
+  name        = "Mikloska homokozoja 2"
   description = "see TCOE-593 for more info"
   status      = "operational"
 
