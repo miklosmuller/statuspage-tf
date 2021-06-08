@@ -10,6 +10,16 @@ provider "statuspage" {
   api_key = "a4f8fd27-2eed-4c71-b101-9580c56bcd18"
 }
 
+data "statuspage_components" "default" {
+
+    page_id = local.page_id
+
+    filter {
+        name = "name"
+        values = [ "value_1", "value_2" ]
+    }
+}
+
 #resource "statuspage_component" "my_component" {
 #  page_id     = "029l93xg1bxd"
 #  name        = "Mikloska homokozoja 6"
@@ -23,13 +33,13 @@ provider "statuspage" {
 #  }
 #}
 
-resource "statuspage_incident" "my_incident" {
-  page_id     = "029l93xg1bxd"
-
-  name    = "Test incident name 5"
-  impact_override = "none"
-  status = "investigating"
-  body   = "We are currently investigating the issue."
+#resource "statuspage_incident" "my_incident" {
+#  page_id     = "029l93xg1bxd"
+#
+#  name    = "Test incident name 5"
+#  impact_override = "none"
+#  status = "investigating"
+#  body   = "We are currently investigating the issue."
 
 #  component {
 #    id = statuspage_component.my_component.id
