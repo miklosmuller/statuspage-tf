@@ -21,7 +21,7 @@ data "statuspage_components" "default" {
 }
 
 output "statuspage_components" {
-	value = jsonencode(data.statuspage_components.default.body)[0]
+	value = jsonencode(data.statuspage_components.default.components)[0]
 }
 
 #resource "statuspage_component" "my_component" {
