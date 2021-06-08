@@ -20,6 +20,10 @@ data "statuspage_components" "default" {
     }
 }
 
+output "statuspage_components" {
+	value = jsonencode(data.statuspage_components.default.body)[0]
+}
+
 #resource "statuspage_component" "my_component" {
 #  page_id     = "029l93xg1bxd"
 #  name        = "Mikloska homokozoja 6"
