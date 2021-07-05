@@ -48,7 +48,7 @@ resource "statuspage_component" "my_component" {
 
 resource "statuspage_incident" "my_incident" {
   page_id     = "wvy1y3msjr06"
-  name    = "Test incident name 6"
+  name    = "Test incident name 7"
   impact_override = "none"
   status = "investigating"
   body   = "We are currently investigating the issue."
