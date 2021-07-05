@@ -30,21 +30,21 @@ data "statuspage_component_groups" "default" {
 #    }
 }
 
-output "statuspage_component_groups" {
-	value = jsonencode(data.statuspage_component_groups.default.component_groups)
-}
-
-#resource "statuspage_component" "my_component" {
-#  page_id     = "wvy1y3msjr06"
-#  name        = "Mikloska homokozoja 6"
-#  description = "see TCOE-593 for more info"
-#  status      = "operational"
-#  lifecycle {
-#      ignore_changes = [
-#          status
-#      ]
-#  }
+#output "statuspage_component_groups" {
+#	value = jsonencode(data.statuspage_component_groups.default.component_groups)
 #}
+
+resource "statuspage_component" "my_component" {
+  page_id     = "wvy1y3msjr06"
+  name        = "Sandbox Miklos 1"
+  description = "see TCOE-593 for more info"
+  status      = "operational"
+  lifecycle {
+      ignore_changes = [
+          status
+      ]
+  }
+}
 
 resource "statuspage_incident" "my_incident" {
   page_id     = "wvy1y3msjr06"
