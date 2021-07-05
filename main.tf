@@ -22,39 +22,39 @@ provider "statuspage" {
 #	value = jsonencode(data.statuspage_components.default.components)
 #}
 
-data "statuspage_component_groups" "default" {
-    page_id = "wvy1y3msjr06"
-    filter {
-        name = "name"
-        values = [ "value_1", "value_2" ]
-    }
-}
-
-output "statuspage_component_groups" {
-	value = jsonencode(data.statuspage_component_groups.default.component_groups)
-}
-
-#resource "statuspage_component" "my_component" {
-#  page_id     = "wvy1y3msjr06"
-#  name        = "Sandbox Miklos 2"
-#  description = "see TCOE-593 for more info"
-#  status      = "operational"
-#  lifecycle {
-#      ignore_changes = [
-#          status
-#      ]
-#  }
+#data "statuspage_component_groups" "default" {
+#    page_id = "wvy1y3msjr06"
+#    filter {
+#        name = "name"
+#        values = [ "value_1", "value_2" ]
+#    }
 #}
 
-#resource "statuspage_incident" "my_incident" {
-#  page_id     = "wvy1y3msjr06"
-#  name    = "Test incident name 6"
-#  impact_override = "none"
-#  status = "investigating"
-#  body   = "We are currently investigating the issue."
-#  component {
-#    id = statuspage_component.my_component.id
-#    name = statuspage_component.my_component.name
-#    status = "under_maintenance"
-#  }
+#output "statuspage_component_groups" {
+#	value = jsonencode(data.statuspage_component_groups.default.component_groups)
 #}
+
+resource "statuspage_component" "my_component" {
+  page_id     = "wvy1y3msjr06"
+  name        = "Sandbox Miklos 2"
+  description = "see TCOE-593 for more info"
+  status      = "operational"
+  lifecycle {
+      ignore_changes = [
+          status
+      ]
+  }
+}
+
+resource "statuspage_incident" "my_incident" {
+  page_id     = "wvy1y3msjr06"
+  name    = "Test incident name 6"
+  impact_override = "none"
+  status = "investigating"
+  body   = "We are currently investigating the issue."
+  component {
+    id = statuspage_component.my_component.id
+    name = statuspage_component.my_component.name
+    status = "under_maintenance"
+  }
+}
