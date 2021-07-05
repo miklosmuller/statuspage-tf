@@ -10,19 +10,7 @@ provider "statuspage" {
   api_key = "a4f8fd27-2eed-4c71-b101-9580c56bcd18"
 }
 
-data "statuspage_components" "default" {
-    page_id = "wvy1y3msjr06"
-    filter {
-        name = "name"
-        values = [ "value_1", "value_2" ]
-    }
-}
-
-output "statuspage_components" {
-	value = jsonencode(data.statuspage_components.default.components)
-}
-
-#data "statuspage_component_groups" "default" {
+#data "statuspage_components" "default" {
 #    page_id = "wvy1y3msjr06"
 #    filter {
 #        name = "name"
@@ -30,9 +18,21 @@ output "statuspage_components" {
 #    }
 #}
 
-#output "statuspage_component_groups" {
-#	value = jsonencode(data.statuspage_component_groups.default.component_groups)
+#output "statuspage_components" {
+#	value = jsonencode(data.statuspage_components.default.components)
 #}
+
+data "statuspage_component_groups" "default" {
+    page_id = "wvy1y3msjr06"
+    filter {
+        name = "name"
+        values = [ "value_1", "value_2" ]
+    }
+}
+
+output "statuspage_component_groups" {
+	value = jsonencode(data.statuspage_component_groups.default.component_groups)
+}
 
 #resource "statuspage_component" "my_component" {
 #  page_id     = "wvy1y3msjr06"
