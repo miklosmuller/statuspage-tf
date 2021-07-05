@@ -22,13 +22,13 @@ provider "statuspage" {
 #	value = jsonencode(data.statuspage_components.default.components)
 #}
 
-data "statuspage_component_groups" "default" {
-    page_id = "wvy1y3msjr06"
+#data "statuspage_component_groups" "default" {
+#    page_id = "wvy1y3msjr06"
 #    filter {
 #        name = "name"
 #        values = [ "value_1", "value_2" ]
 #    }
-}
+#}
 
 #output "statuspage_component_groups" {
 #	value = jsonencode(data.statuspage_component_groups.default.component_groups)
