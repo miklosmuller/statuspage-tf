@@ -36,7 +36,7 @@ provider "statuspage" {
 
 resource "statuspage_component" "my_component" {
   page_id     = "wvy1y3msjr06"
-  name        = "Sandbox Miklos 1"
+  name        = "Sandbox Miklos 2"
   description = "see TCOE-593 for more info"
   status      = "operational"
   lifecycle {
